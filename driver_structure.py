@@ -11,6 +11,7 @@ def count_text_structure(text, span=None, structure=None):
             structure['Sentences'] += 1
             for tok_span in get_tokens(text, sent_span):
                 structure['Words'] += 1
+    return structure
 
 
 structures = {}

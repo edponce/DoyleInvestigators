@@ -45,7 +45,7 @@ CHARACTERS_NAMES = {
             ['Fred Porlock'],
             ['P._Moriarty', 'Professor_Moriarty', 'professor'],
             ['Sergeant Wilson'],
-            ['Ted Baldwin'],
+            ['Ted Baldwin', 'Teddy Baldwin', 'Mr._Baldwin'],
             ['Captain Marvin'],
         ],
         'detectives': [
@@ -56,7 +56,7 @@ CHARACTERS_NAMES = {
         ],
         'perpetrators': [
             ['P._Moriarty', 'Professor_Moriarty', 'professor'],
-            ['Ted Baldwin'],
+            ['Ted Baldwin', 'Teddy Baldwin', 'Mr._Baldwin'],
         ],
         'suspects': [
             ['Mrs. Douglas'],
@@ -73,7 +73,7 @@ CHARACTERS_NAMES = {
             ['Joseph Stangerson'],
             ['Lestrade'],
             ['Gregson'],
-            ['Jefferson Hope', 'cabman'],
+            ['Jefferson Hope', 'cabman', 'hansom'],
             ['Brigham Young'],
             ['M._Charpentier', 'Madame_Charpentier', 'Madame', 'Mrs._Charpentier'],
             ['A._Charpentier', 'Arthur_Charpentier', 'Arthur'],
@@ -85,7 +85,7 @@ CHARACTERS_NAMES = {
             ['Lestrade'],
         ],
         'perpetrators': [
-            ['Jefferson Hope', 'cabman'],  # Part 1
+            ['Jefferson Hope', 'cabman', 'hansom'],  # Part 1
             # ['Enoch Drebber'],  # Part 2
             # ['Joseph Stangerson'],  # Part 2
         ],
@@ -171,9 +171,9 @@ CHARACTERS_NAMES = {
 }
 
 
-##################
-# Read/Load Corpus
-##################
+#############
+# Load Corpus
+#############
 
 def get_corpus_from_url(url):
     with urllib.request.urlopen(url) as fd:
@@ -215,9 +215,9 @@ def get_corpus(key):
     raise Exception(f"corpus '{key}' not found")
 
 
-######################
-# Regexes for Headings
-######################
+############################
+# Headings Detection (Regex)
+############################
 
 def get_newline_index(text):
     """Find the index of the first newline in the text.
@@ -445,6 +445,60 @@ def select_rois_spans(spans, n=None):
     return _spans
 
 
+def remove_embedded_spans(spans):
+    non_embedded_spans = copy.deepcopy(spans)
+    for i in range(len(spans)):
+        span = spans[i]
+        for j in range(i + 1, len(spans)):
+            _span = spans[j]
+            if span[0] >= _span[0] and span[1] <= _span[1]:
+                non_embedded_spans.remove(span)
+                break
+            elif span[1] > _span[1]:
+                break
+    non_embedded_spans.sort()
+    return non_embedded_spans
+
+
+def get_nonoverlapped_spans(spans, *, join=True):
+    """Remove fully embedded spans and join overlapped spans."""
+    non_embedded_spans = remove_embedded_spans(spans)
+    non_embedded_spans = remove_embedded_spans(non_embedded_spans[::-1])
+    if not join:
+        return non_embedded_spans
+
+    joined_spans = []
+    for span in non_embedded_spans:
+        for _span in non_embedded_spans:
+            if span != _span:
+                joined_span = None
+                if span[0] >= _span[0] and span[0] <= _span[1]:
+                    joined_span = (_span[0], span[1])
+                elif span[1] >= _span[0] and span[1] <= _span[1]:
+                    joined_span = (span[0], _span[1])
+                if joined_span:
+                    if joined_span not in joined_spans:
+                        joined_spans.append(joined_span)
+                    break
+        else:
+            joined_spans.append(span)
+
+    nonoverlap_spans = sorted(joined_spans)
+
+    # Recurse until condition is satisfied
+    if nonoverlap_spans == spans:
+        return nonoverlap_spans
+    return get_nonoverlapped_spans(nonoverlap_spans)
+
+
+def contains_span(spans, span):
+    """Validate if a span is contained in a collection of spans."""
+    for _span in spans:
+        if span[0] >= _span[0] and span[1] <= _span[1]:
+            return True
+    return False
+
+
 def get_rois(text, name=None, *, n=None, headings_map=None):
     """Get span bounding a ROI.
 
@@ -480,6 +534,7 @@ def get_rois(text, name=None, *, n=None, headings_map=None):
     return _rois
 
 
+
 def get_roi(text, name, span=None, *, n=None):
     if not span:
         spans = get_rois(text, name, n=n)
@@ -489,50 +544,6 @@ def get_roi(text, name, span=None, *, n=None):
             for _span in get_rois(text[span[0]:span[1]], name, n=n)
         ]
     return spans
-
-
-def get_nonoverlapped_spans(spans):
-    nonoverlap_spans = []
-    i = 0
-    while True:
-        # "Recursion" by looping
-        if spans == nonoverlap_spans:
-            break
-        elif i > 0:
-            spans = nonoverlap_spans
-            nonoverlap_spans = []
-        i += 1
-
-        # Remove fully embedded spans
-        non_embedded_spans = copy.deepcopy(spans)
-        for span in spans:
-            for _span in spans:
-                if (
-                    span != _span and
-                    (span[0] >= _span[0] and span[1] <= _span[1])
-                ):
-                    non_embedded_spans.remove(span)
-                    break
-
-        # Join overlapped spans, "recursively"
-        joined_spans = []
-        for span in non_embedded_spans:
-            for _span in non_embedded_spans:
-                if span != _span:
-                    joined_span = None
-                    if span[0] >= _span[0] and span[0] <= _span[1]:
-                        joined_span = (_span[0], span[1])
-                    elif span[1] >= _span[0] and span[1] <= _span[1]:
-                        joined_span = (span[0], _span[1])
-                    if joined_span:
-                        if joined_span not in joined_spans:
-                            joined_spans.append(joined_span)
-                        break
-            else:
-                joined_spans.append(span)
-
-        nonoverlap_spans = sorted(joined_spans)
-    return nonoverlap_spans
 
 
 def get_text_from_span(text, span=None):
@@ -571,9 +582,9 @@ def get_epilogue(text, span=None):
     return get_roi(text, 'epilogue', span)
 
 
-##############
-# Tokenization
-##############
+######################
+# Tokenization (Regex)
+######################
 
 def tokenize(text, span=None, regex=r'\w', *, use_remaining=False):
     def _get_tokens(text):
@@ -635,9 +646,16 @@ def get_sentences(text, span=None, *, n=None):
     spans = tokenize(
         text,
         span,
-        r'(([^\.\r\n;M!]+\n?)+(.")?(M[rR][sS]?\.\s)?(M)?)+'
+        r'('
+        r'([^\.\r\n;M!]+(\r?\n)?)+'
+        r'(.")?'
+        r'(M[rR][sS]?\.\s)?'
+        r'M?'
+        r')+'
         r'|'
-        r'M[rR][sS]?\.\s([^\.;M!]+(.")?(M[rR][sS]?\.\s)?(M)?)+',
+        r'M[rR][sS]?'
+        r'\.\s'
+        r'([^\.;M!]+(.")?(M[rR][sS]?\.\s)?(M)?)+',
     )
     return select_spans(spans, n)
 
@@ -657,9 +675,14 @@ def get_tokens(text, span=None, *, n=None):
     return select_spans(spans, n)
 
 
-##########################
-# Named Entity Recognition
-##########################
+def get_conversations(text, span=None, *, n=None):
+    spans = tokenize(text, span, r'"[^"]+"')
+    return select_spans(spans, n)
+
+
+################################
+# Named Entity Recognition (NER)
+################################
 
 def abbreviate_entity(entity):
     """Abbreviate names to fit in plots."""
@@ -774,7 +797,7 @@ def ner_story_with_paragraphs(story, span=None):
     return story_spans, story_counts
 
 
-def plot_ner_counts_story_with_chapters(story, counts):
+def plot_ner_counts_story_with_chapters(story, counts, *, show=False):
     ylim = (0, get_max_frequency_from_nested2_map(counts))
     for character_type in CHARACTERS_NAMES[story].keys():
         ns = int(np.ceil(np.sqrt(len(counts[character_type]))))
@@ -788,12 +811,21 @@ def plot_ner_counts_story_with_chapters(story, counts):
                 labels.append(abbreviate_entity(k))
                 data.append(v)
 
+            # Specific for 'The Valley of Fear'
+            # if chp <= 7:
+            #     part = 1
+            # else:
+            #     part = 2
+            #     chp -= 7
+            # barplot(data, labels, xlabel=f'Part {part} - Chapter {chp}', ylim=ylim, ax=ax)
+
             barplot(data, labels, xlabel=f'Chapter {chp}', ylim=ylim, ax=ax)
         print(f'{story} - {character_type}')
-        plt.show()
+        if show:
+            plt.show()
 
 
-def plot_ner_counts_story(story, counts):
+def plot_ner_counts_story(story, counts, *, show=False):
     ylim = (0, get_max_frequency_from_nested2_map(counts))
     for character_type in CHARACTERS_NAMES[story].keys():
         freq = counts[character_type][0]
@@ -807,10 +839,11 @@ def plot_ner_counts_story(story, counts):
 
         barplot(data, labels, xlabel='', ylim=ylim)
         print(f'{story} - {character_type}')
-        plt.show()
+        if show:
+            plt.show()
 
 
-def plot_ner_counts_story_with_paragraphs(story, counts):
+def plot_ner_counts_story_with_paragraphs(story, counts, *, show=False):
     ylim = (0, get_max_frequency_from_nested2_map(counts))
     for character_type in CHARACTERS_NAMES[story].keys():
         ns = int(np.ceil(np.sqrt(len(counts[character_type]))))
@@ -826,7 +859,8 @@ def plot_ner_counts_story_with_paragraphs(story, counts):
 
             barplot(data, labels, xlabel=f'Paragraph {par}', ylim=ylim, ax=ax)
         print(f'{story} - {character_type}')
-        plt.show()
+        if show:
+            plt.show()
 
 
 #################
@@ -881,6 +915,201 @@ def get_vocabulary_map(text, span=None, *, spans_map=None):
     return spans_map
 
 
+def get_frequent_items(data, n=10):
+    d = collections.Counter(data)
+    return dict(d.most_common(n))
+
+
+########################
+# First-Time Occurrences
+########################
+
+def get_first_occurrences(story_spans):
+    """Get spans of first occurrences."""
+    firstoccurrences = {}
+    for character_type, sections in story_spans.items():
+        firstoccurrences[character_type] = {}
+        for section, characters in sections.items():
+            for character in characters.keys():
+                spans = story_spans[character_type][section][character]
+                if character not in firstoccurrences[character_type] and spans:
+                    firstoccurrences[character_type][character] = spans[0]
+    return firstoccurrences
+
+
+def get_span_location_with_chapters(text, span, search_span, *, verbose=False):
+    """Get text elements of span occurrence."""
+    location = {'chapter': None, 'paragraph': None, 'sentence': None, 'sentence_chp': None}
+    for ichp, chp_span in enumerate(get_chapters(text, span), start=1):
+        csent = 0  # chapter based sentence
+        for ipar, par_span in enumerate(get_paragraphs(text, chp_span), start=1):
+            for isent, sent_span in enumerate(get_sentences(text, par_span), start=1):
+                csent += 1
+                if verbose:
+                    print(f'Chapter {ichp}, Paragraph {ipar}, Sentence {isent}, Sentence (Chp) {csent}')
+                    print(get_text_from_span(text, sent_span))
+                if search_span[0] >= sent_span[0] and search_span[1] <= sent_span[1]:
+                    location['chapter'] = ichp
+                    location['paragraph'] = ipar
+                    location['sentence'] = isent
+                    location['sentence_chp'] = csent
+                    return location
+
+
+def get_span_location(text, span, search_span, *, verbose=False):
+    """Get text elements of span occurrence."""
+    location = {'paragraph': None, 'sentence': None, 'sentence_text': None}
+    csent = 0  # text based sentence
+    for ipar, par_span in enumerate(get_paragraphs(text, span), start=1):
+        for isent, sent_span in enumerate(get_sentences(text, par_span), start=1):
+            csent += 1
+            if verbose:
+                print(f'Paragraph {ipar}, Sentence {isent}, Sentence (Text) {csent}')
+                print(get_text_from_span(text, sent_span))
+            if search_span[0] >= sent_span[0] and search_span[1] <= sent_span[1]:
+                location['paragraph'] = ipar
+                location['sentence'] = isent
+                location['sentence_text'] = csent
+                return location
+
+
+###################
+# Neighboring Words
+###################
+
+STOPWORDS = {
+    'yours', 'do', 'might', 'although', 'all', 'he', "'s", 'wherein',
+    'themselves', 'used', 'anyone', 'others', 'whom', 'off', 'doing',
+    'she', 'no', 'even', 'behind', 'them', 'done', 'none', 'beside',
+    'whither', 'yet', 'but', 'perhaps', 'one', 'its', 'thereby', 'on',
+    'hereby', 'nine', 'just', 'ca', 'front', "'d", 'also', 'across',
+    'seems', 'towards', 'together', 'itself', 'four', 'that', 'why', 'it',
+    'so', 'three', 'down', 'keep', 'sixty', 'empty', 'above', 'whose',
+    'between', 'hence', 'two', 'be', 'however', 'nothing', 'are', 'whence',
+    're', 'beyond', 'being', 'nowhere', 'always', 'was', 'via', 'mine',
+    'ourselves', 'quite', 'when', 'only', 'should', 'amongst', 'before',
+    'from', 'any', 'most', 'how', 'same', 'if', 'latter', 'something',
+    'fifty', 'an', 'have', 'who', 'too', 'up', 'ours', 'which',
+    'beforehand', 'else', 'sometimes', 'to', 'either', 'really', 'take',
+    'such', 'go', 'again', 'into', 'a', 'per', 'anyhow', 'anything',
+    'elsewhere', 'hundred', 'afterwards', 'we', 'since', 'yourselves',
+    'both', 'top', 'formerly', "'m", 'her', 'alone', 'whereas', 'becoming',
+    'what', "n't", 'back', 'or', "'ll", 'never', 'everyone', 'various',
+    'then', 'over', 'against', 'twelve', 'herself', 'those', 'they',
+    'became', 'thereafter', 'forty', 'latterly', 'seeming', 'see', 'of',
+    'much', 'thereupon', 'regarding', 'get', 'give', 'by', 'indeed', "'ve",
+    'thus', 'part', 'can', 'still', 'is', 'nor', 'first', 'eight',
+    'nevertheless', 'another', 'along', 'i', 'former', 'someone',
+    'without', 'noone', 'whoever', 'becomes', 'about', 'through', 'unless',
+    'fifteen', 'namely', 'anywhere', 'will', 'as', 'each', 'during', 'few',
+    'become', 'their', 'hereafter', 'could', 'third', 'thru', 'somehow',
+    'in', 'bottom', 'am', 'seem', 'otherwise', 'here', 'several', 'say',
+    'would', 'our', 'for', 'due', 'move', 'somewhere', 'under', 'himself',
+    'already', 'with', 'except', 'mostly', 'amount', 'more', 'you', 'his',
+    'almost', 'every', 'upon', 'throughout', 'often', 'below', 'been',
+    'whatever', 'eleven', 'whole', 'within', 'cannot', 'five', 'him',
+    'hers', 'yourself', 'next', 'once', 'around', "'re", 'thence', 'using',
+    'does', 'until', 'were', 'make', 'onto', 'us', 'your', 'while',
+    'because', 'some', 'show', 'full', 'everything', 'did', 'after',
+    'call', 'now', 'the', 'meanwhile', 'many', 'whereupon', 'everywhere',
+    'me', 'name', 'not', 'seemed', 'least', 'must', 'six', 'less',
+    'serious', 'there', 'whereby', 'whether', 'own', 'and', 'whereafter',
+    'has', 'may', 'neither', 'where', 'ever', 'wherever', 'made',
+    'moreover', 'well', 'myself', 'among', 'please', 'other', 'out',
+    'this', 'therein', 'rather', 'though', 'hereupon', 'besides', 'had',
+    'at', 'twenty', 'ten', 'these', 'my', 'than', 'side', 'nobody', 'very',
+    'last', 'sometime', 'toward', 'herein', 'whenever', 'further',
+    'anyway', 'enough', 'therefore', 'put',
+}
+
+
+# Get neighbor words (even across sentences)
+def get_neighbor_words_for_character(text, spans, characters, alias_list, *, n=3, stopwords=None):
+    neighbors = {}
+    for character, cspans in characters.items():
+        neighbors[character] = {}
+        neighbors[character]['before'] = collections.defaultdict(int)
+        neighbors[character]['after'] = collections.defaultdict(int)
+        # neighbors[character]['before_spans'] = collections.defaultdict(list)
+        # neighbors[character]['after_spans'] = collections.defaultdict(list)
+
+        aliases = []
+        for clist in alias_list:
+            if character == clist[0]:
+                aliases = [alias.lower() for alias in clist]
+                break
+
+        # Combine token and character spans
+        tmp = copy.deepcopy(spans)
+        tmp.extend(cspans)
+        spans2 = get_nonoverlapped_spans(tmp, join=False)
+
+        last_idx = 0
+        for cspan in cspans:
+            try:
+                idx = spans2.index(cspan, last_idx)
+                last_idx = idx
+            except ValueError:
+                continue
+
+            # Hack to dismiss names as neighbors
+            prev_n = 0
+            _n = 1
+            while prev_n < n:
+                prev_idx = idx - _n
+                _n += 1
+                if prev_idx >= 0:
+                    token = spans2[prev_idx]
+                    word = get_text_from_span(text, token)
+
+                    valid = True
+                    for alias in aliases:
+                        if word in alias or word.replace(' ', '_') in alias:
+                            valid = False
+                            break
+
+                    if valid and stopwords:
+                        valid = word not in stopwords
+
+                    if not valid:
+                        continue
+
+                    prev_n += 1
+                    neighbors[character]['before'][word] += 1
+                    # neighbors[character]['before_spans'][word].append(token)
+                else:
+                    break
+
+            after_n = 0
+            _n = 1
+            while after_n < n:
+                after_idx = idx + _n
+                _n += 1
+                if after_idx < len(spans2):
+                    token = spans2[after_idx]
+                    word = get_text_from_span(text, token)
+
+                    valid = True
+                    for alias in aliases:
+                        if word in alias or word.replace(' ', '_') in alias:
+                            valid = False
+                            break
+
+                    if valid and stopwords:
+                        valid = word not in stopwords
+
+                    if not valid:
+                        continue
+
+                    after_n += 1
+                    neighbors[character]['after'][word] += 1
+                    # neighbors[character]['after_spans'][word].append(token)
+                else:
+                    break
+
+    return neighbors
+
+
 ###############
 # Visualization
 ###############
@@ -901,7 +1130,7 @@ def visualize_co_occurrence(data, keywords_rows, closeness_words_columns):
     )
 
     # Set plot size according to the number of cols and rows
-    plt.figure(figsize=(len(columns_example), len(rows_example)))
+    plt.figure(figsize=(len(keywords_rows), len(closeness_words_columns)))
 
     # Set color of heatmap
     hdl = sns.heatmap(df, cmap="YlGnBu", annot=True, linewidths=.5)
@@ -928,19 +1157,3 @@ def barplot(data, labels, *, xlabel='Word', ylabel='Frequency', ylim=None, ax=No
             ax.set(ylim=ylim)
         else:
             plt.ylim(*ylim)
-
-
-###############
-# Co-occurrence
-###############
-
-def generate_cooccurrence_matrix(text, span, freq):
-    vocab = freq.keys()
-    vocab_index = {
-        word: i
-        for i, word in enumerate(vocab)
-    }
-
-    matrix = np.zeros((len(vocab), len(vocab)))
-
-    return matrix

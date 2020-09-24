@@ -1,33 +1,168 @@
 from gutenberg import *
 
 
-corpus = get_corpus('The Valley of Fear')
-text = corpus.lower()
+def crime_story_with_chapters(keywords, text, span=None):
+    story_spans = {}
+    story_counts = {}
+    for n, chp_span in enumerate(get_chapters(text, span), start=1):
+        story_spans[n] = {}
+        story_counts[n] = {}
+        for kw in keywords:
+            story_spans[n].update(search_entity(kw, text, span))
+            story_counts[n] = convert_spans_to_counts_map(story_spans[n])
+    return story_spans, story_counts
 
-# Get region of interest (ROI)
-roi_span = get_text(text)  # all text
-print(roi_span)
+
+def crime_story(keywords, text, span=None):
+    story_spans = {}
+    story_counts = {}
+    story_spans[0] = {}
+    story_counts[0] = {}
+    for kw in keywords:
+        story_spans[0].update(search_entity(kw, text, span))
+        story_counts[0] = convert_spans_to_counts_map(story_spans[0])
+    return story_spans, story_counts
+
+
+def get_first_crime(story_spans):
+    """Get spans of first crime occurrences."""
+    firstoccurrences = {}
+    for section, keywords in story_spans.items():
+        for kw, spans in keywords.items():
+            if kw not in firstoccurrences and spans:
+                firstoccurrences[kw] = spans[0]
+    return firstoccurrences
+
+
+def plot_crime_counts_story_with_chapters(story, counts, *, show=False):
+    ylim = (0, get_max_frequency_from_nested_map(counts))
+    ns = int(np.ceil(np.sqrt(len(counts))))
+    fig, axes = plt.subplots(ns, ns, constrained_layout=True)
+    axes = trim_axes(axes, len(counts))
+    for ax, (chp, freq) in zip(axes, counts.items()):
+        # Abbreviate names for plots
+        labels = []
+        data = []
+        for k, v in freq.items():
+            labels.append(k)
+            data.append(v)
+        barplot(data, labels, xlabel=f'Chapter {chp}', ylim=ylim, ax=ax)
+    print(f'{story}')
+    if show:
+        plt.show()
+
 
 # Search keywords
-keywords = [
+CRIME_KEYWORDS = [
     'dead', 'death', 'murder', 'crime', 'hurt', 'blood', 'treasure', 'suffer',
     'guilty', 'assassin', 'pain', 'theft', 'steal', 'victim', 'poison',
     'gunshot', 'criminal', 'wound', 'attack',
 ]
-keyword_spans = get_keywords_map(text, roi_span[0], keywords)
 
-# Generate frequency table
-freq = generate_frequency_map(keyword_spans, threshold=5)
-print(freq)
 
-# Plot
-labels = []
-data = []
-for k, v in freq.items():
-    labels.append(k)
-    data.append(v)
+###########################
 
-print(labels)
-print(data)
-barplot(data, labels)
-plt.show()
+n_story = 4
+
+if n_story == 1:
+	story = 'The Valley of Fear'
+elif n_story == 3:
+	story = 'The Sign of the Four'
+elif n_story == 4:
+	story = 'The Hound of the Baskervilles'
+
+if n_story in (1, 3, 4):
+	# Get corpus span
+	corpus = get_corpus(story)
+	corpus_l = corpus.lower()
+	spans = get_text(corpus_l)
+	span = spans[0]
+
+
+	# Full story
+	story_spans, story_counts = crime_story_with_chapters(CRIME_KEYWORDS, corpus_l, span)
+	# plot_crime_counts_story_with_chapters(story, story_counts, show=True)
+
+	pp = pprint.PrettyPrinter(indent=2)
+	#pp.pprint(story_spans)
+	pp.pprint(story_counts)
+
+
+	# Get span of first occurrence
+	first_occurrences = get_first_crime(story_spans)
+	# print(first_occurrences)
+
+	# Find location of first span
+	first_locations = {}
+	for kw, kw_span in first_occurrences.items():
+		location = get_span_location(corpus_l, span, kw_span, verbose=False)
+		first_locations[kw] = location
+
+	print(story)
+	pp = pprint.PrettyPrinter(indent=2)
+	pp.pprint(first_locations)
+
+
+elif n_story == 2:
+	story = 'A Study in Scarlet'
+
+	# Get corpus span
+	corpus = get_corpus(story)
+	corpus_l = corpus.lower()
+	spans = get_parts(corpus_l, n=1)  # n = Part
+	span = spans[0]
+
+
+	# Full story
+	story_spans, story_counts = crime_story_with_chapters(CRIME_KEYWORDS, corpus_l, span)
+
+	pp = pprint.PrettyPrinter(indent=2)
+	#pp.pprint(story_spans)
+	pp.pprint(story_counts)
+
+
+	# Get span of first occurrence
+	first_occurrences = get_first_crime(story_spans)
+	# print(first_occurrences)
+
+	# Find location of first span
+	first_locations = {}
+	for kw, kw_span in first_occurrences.items():
+		location = get_span_location(corpus_l, span, kw_span, verbose=False)
+		first_locations[kw] = location
+
+	print(story)
+	pp = pprint.PrettyPrinter(indent=2)
+	pp.pprint(first_locations)
+
+elif n_story == 5:
+
+	story = 'The Boscombe Valley Mystery'
+
+	# Get corpus span
+	corpus = get_corpus(story)
+	corpus_l = corpus.lower()
+	spans = get_adventures(corpus_l, n=4)
+	span = spans[0]
+
+	# Full story
+	story_spans, story_counts = crime_story(CRIME_KEYWORDS, corpus_l, span)
+
+	pp = pprint.PrettyPrinter(indent=2)
+	#pp.pprint(story_spans)
+	pp.pprint(story_counts)
+
+
+	# Get span of first occurrence
+	first_occurrences = get_first_crime(story_spans)
+	# print(first_occurrences)
+
+	# Find location of first span
+	first_locations = {}
+	for kw, kw_span in first_occurrences.items():
+		location = get_span_location(corpus_l, span, kw_span, verbose=False)
+		first_locations[kw] = location
+
+	print(story)
+	pp = pprint.PrettyPrinter(indent=2)
+	pp.pprint(first_locations)
