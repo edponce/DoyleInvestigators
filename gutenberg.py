@@ -128,7 +128,7 @@ CHARACTERS_NAMES = {
             ['James Mortimer', 'doctor', 'Doctor'],
             ['Sir_Charles', 'Charles_Baskerville'],
             ['Henry Baskerville', 'Sir_Henry'],
-            ['Mr._Stapleton', 'Jack', 'Stapleton'],
+            ['Mr._Stapleton', 'Jack', 'Stapleton', 'naturalist'],
             ['Miss_Stapleton', 'Beryl'],
             ['Barrymore', 'butler'],
             ['Selden'],
@@ -140,7 +140,7 @@ CHARACTERS_NAMES = {
             ['Lestrade'],
         ],
         'perpetrators': [
-            ['Mr._Stapleton', 'Jack', 'Stapleton'],
+            ['Mr._Stapleton', 'Jack', 'Stapleton', 'naturalist'],
         ],
         'suspects': [
             ['Barrymore', 'butler'],
@@ -1133,13 +1133,15 @@ def visualize_co_occurrence(data, keywords_rows, closeness_words_columns):
     plt.figure(figsize=(len(keywords_rows), len(closeness_words_columns)))
 
     # Set color of heatmap
-    hdl = sns.heatmap(df, cmap="YlGnBu", annot=True, linewidths=.5)
+    # hdl = sns.heatmap(df, cmap="YlGnBu", annot=True, annot_kws={'fontsize': 20}, linewidths=.5, linecolor='black')
+    hdl = sns.heatmap(df, cmap="YlGnBu", annot=True, annot_kws={'fontsize': 20}, linewidths=.5, linecolor='black', cbar=False)
 
     # Rotate text
     loc_x, labels_x = plt.xticks()
     loc_y, labels_y = plt.yticks()
-    hdl.set_xticklabels(labels_x, rotation=58)
-    hdl.set_yticklabels(labels_y, rotation=0)
+    hdl.set_xticklabels(labels_x, rotation=0, fontsize=20)
+    hdl.set_yticklabels(labels_y, rotation=0, fontsize=20)
+    # sns.set(font_scale=1)
 
 
 def barplot(data, labels, *, xlabel='Word', ylabel='Frequency', ylim=None, ax=None):
@@ -1150,7 +1152,11 @@ def barplot(data, labels, *, xlabel='Word', ylabel='Frequency', ylim=None, ax=No
     # Create a dataframe from the provided data
     df = pandas.DataFrame(data_, columns=[xlabel, ylabel])
     hdl = sns.barplot(x=xlabel, y=ylabel, data=df, palette="Blues_d", ax=ax)
-    plt.setp(hdl.get_xticklabels(), rotation=45)
+    plt.setp(hdl.get_xticklabels(), rotation=0)
+    # plt.setp(hdl.get_xticklabels(), rotation=15)
+    plt.rc('xtick', labelsize=16)
+    plt.rc('ytick', labelsize=16)
+    plt.rc('axes', labelsize=20)
 
     if ylim:
         if ax:
