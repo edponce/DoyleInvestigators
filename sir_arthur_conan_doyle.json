@@ -1,0 +1,1751 @@
+[
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Sherlock Holmes",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 19,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "2": 23,
+      "3": 0,
+      "4": 32,
+      "5": 10,
+      "6": 20,
+      "7": 36,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Watson",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 23,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "2": 0,
+      "3": 0,
+      "4": 2,
+      "5": 0,
+      "6": 25,
+      "7": 4,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Alec MacDonald|inspector|Inspector|Mr. Mac|Mac",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 9,
+      "10": 1,
+      "11": 1,
+      "12": 0,
+      "13": 1,
+      "14": 1,
+      "2": 25,
+      "3": 0,
+      "4": 15,
+      "5": 15,
+      "6": 14,
+      "7": 31,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "White Mason|police officer",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 0,
+      "10": 2,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "2": 2,
+      "3": 2,
+      "4": 15,
+      "5": 2,
+      "6": 3,
+      "7": 6,
+      "8": 1,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "P. Moriarty|Professor Moriarty|professor",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 4,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "2": 8,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Ted Baldwin|Teddy Baldwin|Mr. Baldwin",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 0,
+      "10": 11,
+      "11": 1,
+      "12": 4,
+      "13": 5,
+      "14": 5,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 2,
+      "8": 0,
+      "9": 27
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Mrs. Douglas",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 5,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "13": 0,
+      "14": 2,
+      "2": 3,
+      "3": 23,
+      "4": 16,
+      "5": 31,
+      "6": 18,
+      "7": 19,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Cecil James Barker",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "10": 2,
+      "11": 0,
+      "12": 1,
+      "13": 0,
+      "14": 1,
+      "2": 0,
+      "3": 20,
+      "4": 10,
+      "5": 27,
+      "6": 15,
+      "7": 23,
+      "8": 0,
+      "9": 2
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Sherlock Holmes",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 8,
+      "2": 10,
+      "3": 13,
+      "4": 10,
+      "5": 10,
+      "6": 16,
+      "7": 25
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Watson",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 2,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 2,
+      "6": 1,
+      "7": 0
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Gregson",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 16,
+      "4": 3,
+      "5": 0,
+      "6": 11,
+      "7": 7
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Lestrade",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 0,
+      "2": 2,
+      "3": 13,
+      "4": 4,
+      "5": 0,
+      "6": 7,
+      "7": 14
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Jefferson Hope|cabman|cab driver|hansom",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 1,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 5
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Enoch Drebber",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 5,
+      "4": 0,
+      "5": 3,
+      "6": 14,
+      "7": 7
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Joseph Stangerson",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 5,
+      "4": 0,
+      "5": 0,
+      "6": 10,
+      "7": 11
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "M. Charpentier|Madame Charpentier|Madame|Mrs. Charpentier",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 6,
+      "7": 0
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "A. Charpentier|Arthur Charpentier|Arthur",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 4,
+      "7": 0
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Sherlock Holmes",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 4,
+      "10": 16,
+      "11": 8,
+      "12": 9,
+      "2": 9,
+      "3": 8,
+      "4": 5,
+      "5": 16,
+      "6": 14,
+      "7": 14,
+      "8": 16,
+      "9": 16
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Watson",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 1,
+      "10": 2,
+      "11": 2,
+      "12": 0,
+      "2": 1,
+      "3": 0,
+      "4": 1,
+      "5": 2,
+      "6": 4,
+      "7": 3,
+      "8": 5,
+      "9": 3
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Jonathan Small",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 0,
+      "10": 5,
+      "11": 3,
+      "12": 17,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 1,
+      "7": 14,
+      "8": 3,
+      "9": 3
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Tonga",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 2,
+      "12": 11,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Major Sholto|Major|major",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 2,
+      "12": 11,
+      "2": 2,
+      "3": 5,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 5,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Thaddeus|Thaddeus Sholto",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 1,
+      "12": 1,
+      "2": 0,
+      "3": 0,
+      "4": 5,
+      "5": 14,
+      "6": 8,
+      "7": 2,
+      "8": 2,
+      "9": 3
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Sherlock Holmes",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 20,
+      "10": 5,
+      "11": 1,
+      "12": 26,
+      "13": 17,
+      "14": 25,
+      "15": 2,
+      "2": 10,
+      "3": 13,
+      "4": 27,
+      "5": 27,
+      "6": 4,
+      "7": 6,
+      "8": 1,
+      "9": 7
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Watson",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 10,
+      "10": 4,
+      "11": 7,
+      "12": 13,
+      "13": 15,
+      "14": 4,
+      "15": 2,
+      "2": 1,
+      "3": 6,
+      "4": 15,
+      "5": 7,
+      "6": 3,
+      "7": 10,
+      "8": 0,
+      "9": 14
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Lestrade",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 3,
+      "14": 7,
+      "15": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Mr. Stapleton|Jack|Stapleton|naturalist",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 1,
+      "10": 4,
+      "11": 4,
+      "12": 13,
+      "13": 10,
+      "14": 9,
+      "15": 31,
+      "2": 3,
+      "3": 2,
+      "4": 0,
+      "5": 0,
+      "6": 2,
+      "7": 18,
+      "8": 8,
+      "9": 12
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Barrymore|butler",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "10": 17,
+      "11": 3,
+      "12": 2,
+      "13": 2,
+      "14": 0,
+      "15": 1,
+      "2": 10,
+      "3": 0,
+      "4": 0,
+      "5": 9,
+      "6": 4,
+      "7": 12,
+      "8": 10,
+      "9": 22
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Laura Lyons",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 0,
+      "10": 3,
+      "11": 7,
+      "12": 3,
+      "13": 6,
+      "14": 0,
+      "15": 4,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "Sherlock Holmes",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 48
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "Watson",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 4
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "Lestrade",
+    "queryType": "occurrences",
+    "question": "Detective",
+    "results": {
+      "1": 24
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "John Turner|Mr. Turner|Turner",
+    "queryType": "occurrences",
+    "question": "Perpetrator",
+    "results": {
+      "1": 21
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "James McCarthy",
+    "queryType": "occurrences",
+    "question": "Other Suspects",
+    "results": {
+      "1": 45
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "dead",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 1,
+      "11": 0,
+      "12": 2,
+      "13": 4,
+      "14": 0,
+      "2": 4,
+      "3": 4,
+      "4": 2,
+      "5": 5,
+      "6": 5,
+      "7": 4,
+      "8": 2,
+      "9": 4
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "death",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 2,
+      "11": 1,
+      "12": 3,
+      "13": 0,
+      "14": 0,
+      "2": 2,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 2,
+      "7": 3,
+      "8": 0,
+      "9": 1
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "murder",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 3,
+      "11": 7,
+      "12": 6,
+      "13": 5,
+      "14": 3,
+      "2": 4,
+      "3": 5,
+      "4": 6,
+      "5": 2,
+      "6": 14,
+      "7": 3,
+      "8": 3,
+      "9": 4
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "crime",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 2,
+      "11": 6,
+      "12": 2,
+      "13": 0,
+      "14": 3,
+      "2": 6,
+      "3": 4,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 2,
+      "8": 0,
+      "9": 3
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "blood",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 2,
+      "11": 3,
+      "12": 7,
+      "13": 1,
+      "14": 4,
+      "2": 0,
+      "3": 1,
+      "4": 5,
+      "5": 4,
+      "6": 3,
+      "7": 0,
+      "8": 0,
+      "9": 3
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "treasure",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 5,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 1,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "guilty",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "13": 1,
+      "14": 0,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 5,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "assassin",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 1,
+      "11": 0,
+      "12": 2,
+      "13": 1,
+      "14": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 1,
+      "6": 4,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "pain",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 3,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "2": 2,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "victim",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 2,
+      "11": 0,
+      "12": 1,
+      "13": 0,
+      "14": 0,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "criminal",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 2,
+      "10": 4,
+      "11": 3,
+      "12": 3,
+      "13": 0,
+      "14": 0,
+      "2": 3,
+      "3": 0,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "attack",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 1,
+      "12": 1,
+      "13": 0,
+      "14": 0,
+      "2": 0,
+      "3": 0,
+      "4": 3,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "dead",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 2,
+      "4": 1,
+      "5": 0,
+      "6": 1,
+      "7": 3
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "death",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "2": 0,
+      "3": 5,
+      "4": 0,
+      "5": 1,
+      "6": 4,
+      "7": 4
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "murder",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "2": 0,
+      "3": 7,
+      "4": 3,
+      "5": 2,
+      "6": 3,
+      "7": 8
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "crime",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 3,
+      "2": 4,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 3,
+      "7": 4
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "blood",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 9,
+      "2": 0,
+      "3": 6,
+      "4": 3,
+      "5": 1,
+      "6": 1,
+      "7": 4
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "victim",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 2,
+      "6": 2,
+      "7": 1
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "poison",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 2,
+      "6": 0,
+      "7": 1
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "wound",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "2": 1,
+      "3": 2,
+      "4": 0,
+      "5": 2,
+      "6": 0,
+      "7": 0
+    },
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "dead",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 0,
+      "11": 1,
+      "12": 3,
+      "2": 1,
+      "3": 1,
+      "4": 4,
+      "5": 3,
+      "6": 2,
+      "7": 2,
+      "8": 1,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "death",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 1,
+      "11": 0,
+      "12": 8,
+      "2": 0,
+      "3": 2,
+      "4": 3,
+      "5": 1,
+      "6": 2,
+      "7": 3,
+      "8": 1,
+      "9": 1
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "murder",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 1,
+      "11": 1,
+      "12": 5,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 3,
+      "8": 1,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "crime",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 1,
+      "7": 3,
+      "8": 1,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "blood",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 1,
+      "12": 7,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 3,
+      "6": 2,
+      "7": 1,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "treasure",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 3,
+      "11": 9,
+      "12": 27,
+      "2": 0,
+      "3": 0,
+      "4": 12,
+      "5": 3,
+      "6": 2,
+      "7": 13,
+      "8": 2,
+      "9": 4
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "suffer",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "2": 0,
+      "3": 1,
+      "4": 3,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 1
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "pain",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "2": 0,
+      "3": 0,
+      "4": 2,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 1
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "poison",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 1,
+      "12": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 1,
+      "6": 3,
+      "7": 1,
+      "8": 2,
+      "9": 0
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "criminal",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 2,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 1,
+      "7": 1,
+      "8": 2,
+      "9": 1
+    },
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "dead",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 1,
+      "12": 1,
+      "13": 3,
+      "14": 5,
+      "15": 3,
+      "2": 1,
+      "3": 2,
+      "4": 0,
+      "5": 1,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "death",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 5,
+      "11": 6,
+      "12": 5,
+      "13": 8,
+      "14": 4,
+      "15": 11,
+      "2": 10,
+      "3": 4,
+      "4": 1,
+      "5": 2,
+      "6": 5,
+      "7": 5,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "murder",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 4,
+      "13": 2,
+      "14": 1,
+      "15": 5,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 1,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "crime",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 1,
+      "10": 2,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 0,
+      "15": 2,
+      "2": 0,
+      "3": 2,
+      "4": 1,
+      "5": 0,
+      "6": 1,
+      "7": 0,
+      "8": 1,
+      "9": 2
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "blood",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 2,
+      "13": 0,
+      "14": 1,
+      "15": 2,
+      "2": 1,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 2,
+      "7": 1,
+      "8": 0,
+      "9": 3
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "suffer",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 1,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 1,
+      "15": 0,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 2,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "pain",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 2,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 1,
+      "7": 0,
+      "8": 1,
+      "9": 1
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "steal",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 2,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 2,
+      "9": 4
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "victim",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 1,
+      "13": 1,
+      "14": 2,
+      "15": 3,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "criminal",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 2,
+      "13": 2,
+      "14": 0,
+      "15": 3,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 1,
+      "9": 2
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "wound",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 2,
+      "15": 1,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 1,
+      "7": 1,
+      "8": 0,
+      "9": 0
+    },
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "dead",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 9
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "murder",
+    "queryType": "occurrences",
+    "question": "Crime",
+    "results": {
+      "1": 9
+    },
+    "title": "The Boscombe Valley Mystery"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "P. Moriarty|Professor Moriarty|professor",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["Holmes", 3],
+      ["crime", 2],
+      ["circles", 2]
+    ],
+    "after": [
+      ["criminal", 2],
+      ["interest", 2],
+      ["wild", 2]
+    ],
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 14,
+    "query": "Ted Baldwin|Teddy Baldwin|Mr. Baldwin",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["brother", 6],
+      ["hand", 6],
+      ["McMurdo", 4]
+    ],
+    "after": [
+      ["McMurdo", 5],
+      ["McGinty", 3],
+      ["cried", 3]
+    ],
+    "title": "The Valley of Fear"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 7,
+    "query": "Jefferson Hope|cabman|cab driver|hansom",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["men", 2],
+      ["Holmes", 1],
+      ["engaged", 1]
+    ],
+    "after": [
+      ["help", 2],
+      ["poison", 1],
+      ["compel", 1]
+    ],
+    "title": "A Study in Scarlet"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Jonathan Small",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["man", 4],
+      ["matter", 4],
+      ["lips", 3]
+    ],
+    "after": [
+      ["Jones", 4],
+      ["man", 3],
+      ["treasure", 3]
+    ],
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 12,
+    "query": "Tonga",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["little", 4],
+      ["Sholto", 2],
+      ["killed", 1]
+    ],
+    "after": [
+      ["darts", 3],
+      ["managed", 2],
+      ["rope", 2]
+    ],
+    "title": "The Sign of the Four"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 15,
+    "query": "Mr. Stapleton|Jack|Stapleton|naturalist",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["Miss", 11],
+      ["man", 5],
+      ["Henry", 5]
+    ],
+    "after": [
+      ["Stapletons", 13],
+      ["turned", 4],
+      ["friend", 3]
+    ],
+    "title": "The Hound of the Baskervilles"
+  },
+  {
+    "author": "Sir Arthur Conan Doyle",
+    "numChapters": 1,
+    "query": "John Turner|Mr. Turner|Turner",
+    "queryType": "nearby",
+    "question": "Nearby Words",
+    "before": [
+      ["son", 2],
+      ["man", 2],
+      ["know", 2]
+    ],
+    "after": [
+      ["daughter", 4],
+      ["money", 2],
+      ["ill", 2]
+    ],
+    "title": "The Boscombe Valley Mystery"
+  }
+]

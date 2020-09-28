@@ -1,10 +1,15 @@
+import json
 from gutenberg import *
 
 
-story_n = 4
+pp = pprint.PrettyPrinter(indent=2)
 
 
-if story_n == 1:
+jerry = False
+n_story = 4
+
+
+if n_story == 1:
     story = 'The Valley of Fear'
 
     # Select part(s)
@@ -24,7 +29,7 @@ if story_n == 1:
     # pp.pprint(story_spans)
     # pp.pprint(story_counts)
 
-elif story_n == 2:
+elif n_story == 2:
     story = 'A Study in Scarlet'
 
     # Select part(s)
@@ -43,7 +48,7 @@ elif story_n == 2:
     # pp.pprint(story_spans)
     # pp.pprint(story_counts)
 
-elif story_n == 3:
+elif n_story == 3:
     story = 'The Sign of the Four'
 
     spans = get_text(get_corpus(story).lower())
@@ -61,7 +66,7 @@ elif story_n == 3:
     # pp.pprint(story_spans)
     # pp.pprint(story_counts)
 
-elif story_n == 4:
+elif n_story == 4:
     story = 'The Hound of the Baskervilles'
 
     spans = get_text(get_corpus(story).lower())
@@ -79,7 +84,7 @@ elif story_n == 4:
     # pp.pprint(story_spans)
     # pp.pprint(story_counts)
 
-elif story_n == 5:
+elif n_story == 5:
     story = 'The Boscombe Valley Mystery'
 
     spans = get_adventures(get_corpus(story).lower(), n=4)
@@ -135,3 +140,37 @@ for character, freq_modes in perpetrator_neighbors_stop.items():
         if freq and show:
             barplot(list(freq.values()), list(freq.keys()))
             plt.show()
+
+
+##############################################
+# Organize Data for Jerry's Visualization Tool
+##############################################
+
+if jerry:
+    data = []
+
+    item = collections.OrderedDict()
+    item['title'] = story
+    item['author'] = 'Sir Arthur Conan Doyle'
+    item['queryType'] = 'nearby'
+    item['question'] = 'Nearby Words'
+    item['numChapters'] = len(story_counts['perpetrators'])
+
+    characters = CHARACTERS_NAMES[story]['perpetrators']
+
+    aliases = {}
+    for character, direction_map in perpetrator_neighbors_stop.items():
+        for c in characters:
+            if c[0] == character:
+                item['query'] = '|'.join([s.replace('_', ' ') for s in c])
+                break
+        for direction, freq_map in direction_map.items():
+            counter = collections.Counter(freq_map)
+            item[direction] = counter.most_common(3)
+        data.append(copy.deepcopy(item))
+
+    pp.pprint(data)
+
+    with open('conan_doyle.json', 'a') as fd:
+        fd.write(json.dumps(data, sort_keys=True, indent=2))
+        fd.write('\n')
